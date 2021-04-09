@@ -1,0 +1,33 @@
+<style>
+     .product-links {
+    text-align: right;
+}
+
+.product-links button {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links button:hover {
+    color: #fbb72c;
+}
+.product-links  .active {
+    color: #fbb72c;
+}
+</style>
+<div class="product-links">
+<form class="form form-product-ajax" method="POST" action="{% url 'carts:update' %}" data-endpoint="{% url 'carts:home_api' %}">
+    {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+    
+          {% if object in cart.products.all %}
+               <button type="submit" class="active"><i class="fa fa-shopping-cart"> </i></button>
+            
+       {% else %}
+               <button type="submit"><i class="fa fa-shopping-cart"> </i></button>
+       {% endif %}
+</form>
+</div>
