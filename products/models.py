@@ -62,7 +62,7 @@ class Product(models.Model):
     slug = models.SlugField(blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=20, decimal_places=4, default=39.99)
-    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
+    image = models.URLField()
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
