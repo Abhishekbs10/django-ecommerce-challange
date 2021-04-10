@@ -112,22 +112,23 @@
     color: #fbb72c;
 }
 </style>
-
-<div class="product-card">
-  <div class="badge">Hot</div>
-  <div class="product-tumb">
-    {% if instance.image %}
-      <img src="{{ instance.image.url }}" alt="{{ instance.title }}">
-    {% endif %}
-  </div>
-  <div class="product-details">
-    <span class="product-catagory">{{ instance.created_at|timesince }} ago</span>
-    <h4><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></h4>
-    <p>{{ instance.description|truncatewords:15 }}</p>
-    <div class="product-bottom-details">
-      <div class="product-price">{{ instance.price }} Rs</div>
-        {% include "products/snippets/update-cart.html" with product=instance cart=cart %}
-      
-    </div>
-  </div>
+<div class="">
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+          {% if instance.image %}
+            <img src="{{ instance.image.url }}" alt="{{ instance.title }}">
+          {% endif %}
+        </div>
+        <div class="product-details">
+          <span class="product-catagory">{{ instance.created_at|timesince }} ago</span>
+          <h4><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></h4>
+          <p>{{ instance.description|truncatewords:15 }}</p>
+          <div class="product-bottom-details">
+            <div class="product-price">{{ instance.price }} Rs</div>
+              {% include "products/snippets/update-cart.html" with product=instance cart=cart %}
+            
+          </div>
+        </div>
+      </div>
 </div>
