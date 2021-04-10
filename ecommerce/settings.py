@@ -86,8 +86,19 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'deh0ps7vlnqvd8',
+
+        'USER': 'hksqrbzgnwsslk',
+
+        'PASSWORD': '33ad0a75de243c85c72de96fc421ac51759451f1cb3857e918fac13168a1cafd',
+
+        'HOST': 'ec2-3-234-85-177.compute-1.amazonaws.com',
+
+        'PORT': 5432,
+
     }
 }
 django_heroku.settings(locals())
